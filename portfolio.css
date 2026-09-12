@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --ink: #182034;
+    --muted: #667085;
+    --violet: #6d4aff;
+    --violet-dark: #5635e6;
+    --soft: #f4f2ff;
+    --line: #e8e7f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    color: var(--ink);
+    background: #fcfcff;
+    font-family: Manrope, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 82px;
+    padding: 0 clamp(24px, 7vw, 108px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: rgba(252, 252, 255, .88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(232, 231, 241, .8);
+}
+
+.logo {
+    color: var(--ink);
+    font: 700 1.55rem 'Space Grotesk', sans-serif;
+    text-decoration: none;
+    letter-spacing: -.07em;
+}
+
+.logo span {
+    color: var(--violet);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 34px);
+}
+
+.navigation a {
+    color: #556078;
+    font-size: .92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--violet);
+}
+
+.btn-talk,
+.btn-group a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: #fff;
+    background: var(--violet);
+    font-size: .9rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 10px 22px rgba(109, 74, 255, .22);
+    transition: transform .2s, background .2s;
+}
+
+.btn-talk:hover,
+.btn-group a:hover {
+    transform: translateY(-2px);
+    background: var(--violet-dark);
+}
+
+.home {
+    min-height: calc(100vh - 82px);
+    padding: 56px clamp(24px, 9vw, 140px);
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 50px;
+    overflow: hidden;
+    background: radial-gradient(circle at 82% 35%, #e9e5ff 0, transparent 28%), radial-gradient(circle at 8% 82%, #e1f5ff 0, transparent 22%);
+}
+
+.content {
+    max-width: 620px;
+}
+
+.content::before {
+    content: 'FRONTEND DEVELOPER · INDIA';
+    color: var(--violet);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+.content h2 {
+    margin: 16px 0 6px;
+    font: 700 clamp(2.55rem, 5.5vw, 4.8rem)/1.04 'Space Grotesk', sans-serif;
+    letter-spacing: -.065em;
+}
+
+.content h4 {
+    margin: 0;
+    color: var(--violet);
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.content p {
+    max-width: 550px;
+    margin: 22px 0 30px;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-group a:nth-child(2) {
+    color: var(--violet);
+    background: #fff;
+    border: 1px solid #dcd6ff;
+    box-shadow: none;
+}
+
+.btn-group a:nth-child(2):hover {
+    background: var(--soft);
+}
+
+.social-icons {
+    display: flex;
+    gap: 13px;
+    margin-top: 38px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--ink);
+    background: #fff;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    background: var(--violet);
+    border-color: var(--violet);
+    transform: translateY(-3px);
+}
+
+.profile-image {
+    position: relative;
+    display: grid;
+    place-items: end center;
+    min-height: 480px;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    width: min(440px, 90%);
+    aspect-ratio: 1;
+    border-radius: 48% 52% 55% 45%;
+    background: linear-gradient(145deg, #d6ceff, #a9ecff);
+    transform: rotate(-9deg);
+}
+
+.profile-image img {
+    position: relative;
+    z-index: 1;
+    max-width: min(460px, 100%);
+    max-height: 550px;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 25px rgba(52, 38, 111, .18));
+}
+
+@media (max-width: 760px) {
+    header {
+        height: auto;
+        min-height: 72px;
+        padding: 16px 22px;
+        flex-wrap: wrap;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-talk {
+        padding: 9px 14px;
+    }
+
+    .home {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 58px 24px 24px;
+        gap: 8px;
+    }
+
+    .profile-image {
+        min-height: 330px;
+    }
+
+    .profile-image img {
+        max-height: 380px;
+    }
+}

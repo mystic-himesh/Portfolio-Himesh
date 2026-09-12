@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Me | Himesh Dhaker</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        .hire-page {
+            max-width: 1120px;
+            min-height: calc(100vh - 82px);
+            margin: auto;
+            padding: 76px 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 82px;
+            align-items: center;
+            background: radial-gradient(circle at 88% 20%, #e9e5ff 0, transparent 22%)
+        }
+
+        .eyebrow {
+            margin: 0;
+            color: var(--violet);
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: .15em
+        }
+
+        .hire-content h1 {
+            margin: 15px 0 20px;
+            font: 700 clamp(2.6rem, 5vw, 4.4rem)/1.03 'Space Grotesk', sans-serif;
+            letter-spacing: -.06em
+        }
+
+        .hire-content h1 span {
+            color: var(--violet)
+        }
+
+        .hire-content>p {
+            color: var(--muted);
+            line-height: 1.8
+        }
+
+        .services {
+            margin-top: 31px;
+            display: grid;
+            gap: 10px
+        }
+
+        .service {
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+            color: #3d4760;
+            font-size: .92rem;
+            font-weight: 700
+        }
+
+        .service span {
+            margin-right: 10px;
+            color: var(--violet)
+        }
+
+        .hire-form {
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 20px 48px rgba(40, 31, 88, .1)
+        }
+
+        .hire-form h2 {
+            margin: 0 0 7px;
+            font: 600 1.6rem 'Space Grotesk', sans-serif
+        }
+
+        .hire-form>p {
+            margin: 0 0 24px;
+            color: var(--muted);
+            font-size: .92rem
+        }
+
+        .input-group {
+            margin-bottom: 15px
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #394258;
+            font-size: .86rem;
+            font-weight: 800
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dedfec;
+            border-radius: 10px;
+            outline: none;
+            color: var(--ink);
+            background: #fff;
+            font: inherit
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--violet);
+            box-shadow: 0 0 0 4px #eeebff
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--violet);
+            color: #fff;
+            font: 800 .92rem Manrope, sans-serif;
+            cursor: pointer
+        }
+
+        button:hover {
+            background: var(--violet-dark)
+        }
+
+        #success-message {
+            display: none;
+            margin: 15px 0 0;
+            color: #168449;
+            text-align: center;
+            font-size: .9rem;
+            font-weight: 700
+        }
+
+        @media(max-width:760px) {
+            .hire-page {
+                grid-template-columns: 1fr;
+                gap: 42px;
+                padding: 58px 24px
+            }
+
+            .hire-form {
+                padding: 26px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header><a href="portfolio.html" class="logo"><span>H</span>imesh.</a>
+        <nav class="navigation"><a href="portfolio.html">Home</a><a href="about.html">About</a><a
+                href="projectrdt.html">Projects</a><a href="contact.html">Contact</a></nav><a href="hire.html"
+            class="btn-talk">Let's Talk</a>
+    </header>
+    <main class="hire-page">
+        <section class="hire-content">
+            <p class="eyebrow">WORK WITH ME</p>
+            <h1>Let's build something <span>great.</span></h1>
+            <p>I create clean, responsive, user-friendly websites for people and ideas that deserve a strong online
+                presence.</p>
+            <div class="services">
+                <div class="service"><span>✓</span>Responsive website development</div>
+                <div class="service"><span>✓</span>Frontend UI implementation</div>
+                <div class="service"><span>✓</span>Portfolio and landing pages</div>
+                <div class="service"><span>✓</span>HTML, CSS, and JavaScript projects</div>
+            </div>
+        </section>
+        <section class="hire-form">
+            <h2>Start a project</h2>
+            <p>Tell me what you have in mind.</p>
+            <form id="hireForm">
+                <div class="input-group"><label for="clientName">Your name</label><input id="clientName" required
+                        placeholder="Enter your name"></div>
+                <div class="input-group"><label for="clientEmail">Email address</label><input type="email"
+                        id="clientEmail" required placeholder="you@example.com"></div>
+                <div class="input-group"><label for="service">What do you need?</label><select id="service" required>
+                        <option value="">Choose a service</option>
+                        <option>Portfolio website</option>
+                        <option>Business website</option>
+                        <option>Landing page</option>
+                        <option>Frontend development</option>
+                        <option>Other</option>
+                    </select></div>
+                <div class="input-group"><label for="details">Project details</label><textarea id="details" required
+                        placeholder="Goals, timeline, and anything useful to know..."></textarea></div><button
+                    type="submit">Send Hiring Request</button>
+                <p id="success-message">Thank you — your request has been received.</p>
+            </form>
+        </section>
+    </main>
+    <script>document.querySelector('#hireForm').addEventListener('submit', function (e) { e.preventDefault(); document.querySelector('#success-message').style.display = 'block'; this.reset() })</script>
+</body>
+
+</html>

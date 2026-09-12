@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Himesh Dhaker</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        .contact-page {
+            max-width: 1120px;
+            min-height: calc(100vh - 82px);
+            margin: auto;
+            padding: 76px 32px;
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            align-items: center;
+            gap: 80px;
+            background: radial-gradient(circle at 5% 18%, #e9f7ff 0, transparent 20%);
+        }
+
+        .kicker {
+            color: var(--violet);
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+        }
+
+        .contact-info h1 {
+            margin: 14px 0 18px;
+            font: 700 clamp(2.6rem, 5vw, 4.5rem)/1.02 'Space Grotesk', sans-serif;
+            letter-spacing: -.06em;
+        }
+
+        .contact-info h1 span {
+            color: var(--violet)
+        }
+
+        .contact-info>p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .contact-list {
+            margin-top: 32px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #515c72;
+        }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--soft);
+            color: var(--violet);
+            font-weight: 800;
+        }
+
+        .contact-detail strong {
+            color: var(--ink);
+            font-size: .9rem;
+        }
+
+        .contact-detail a {
+            color: #515c72;
+            text-decoration: none;
+            font-size: .9rem;
+        }
+
+        .contact-detail a:hover {
+            color: var(--violet);
+        }
+
+        .contact-form {
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 20px 48px rgba(40, 31, 88, .1);
+        }
+
+        .contact-form h2 {
+            margin: 0 0 6px;
+            font: 600 1.6rem 'Space Grotesk', sans-serif;
+        }
+
+        .contact-form>p {
+            margin: 0 0 25px;
+            color: var(--muted);
+            font-size: .92rem;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #394258;
+            font-size: .86rem;
+            font-weight: 800;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dedfec;
+            border-radius: 10px;
+            outline: none;
+            color: var(--ink);
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--violet);
+            box-shadow: 0 0 0 4px #eeebff;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--violet);
+            color: #fff;
+            font: 800 .92rem Manrope, sans-serif;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        button:hover {
+            background: var(--violet-dark);
+            transform: translateY(-1px);
+        }
+
+        #success-message {
+            display: none;
+            margin: 15px 0 0;
+            color: #168449;
+            text-align: center;
+            font-size: .9rem;
+            font-weight: 700;
+        }
+
+        @media(max-width:760px) {
+            .contact-page {
+                grid-template-columns: 1fr;
+                gap: 42px;
+                padding: 58px 24px
+            }
+
+            .contact-form {
+                padding: 26px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header><a href="portfolio.html" class="logo"><span>H</span>imesh.</a>
+        <nav class="navigation"><a href="portfolio.html">Home</a><a href="about.html">About</a><a
+                href="projectrdt.html">Projects</a><a class="active" href="contact.html">Contact</a></nav><a
+            href="hire.html" class="btn-talk">Let's Talk</a>
+    </header>
+    <main class="contact-page">
+        <section class="contact-info">
+            <p class="kicker">GET IN TOUCH</p>
+            <h1>Let's make an <span>impact.</span></h1>
+            <p>Have a project, opportunity, or question? Send me a message and I’ll get back to you as soon as possible.
+            </p>
+            <div class="contact-list">
+                <div class="contact-detail"><span class="icon">✉</span>
+                    <div><strong>Email</strong><br><a
+                            href="mailto:dhakerhimesh15@gmail.com">dhakerhimesh15@gmail.com</a></div>
+                </div>
+                <div class="contact-detail"><span class="icon">⌖</span>
+                    <div><strong>Location</strong><br><span>Rajasthan, India</span></div>
+                </div>
+                <div class="contact-detail"><span class="icon">in</span>
+                    <div><strong>LinkedIn</strong><br><a target="_blank" rel="noopener"
+                            href="https://www.linkedin.com/in/himesh-dhaker-444067381/">Connect with me</a></div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-form">
+            <h2>Send a message</h2>
+            <p>Fill in the details below to start the conversation.</p>
+            <form id="contactForm">
+                <div class="input-group"><label for="name">Your name</label><input id="name" required
+                        placeholder="Enter your name"></div>
+                <div class="input-group"><label for="email">Email address</label><input type="email" id="email" required
+                        placeholder="you@example.com"></div>
+                <div class="input-group"><label for="message">Your message</label><textarea id="message" required
+                        placeholder="Tell me about your idea..."></textarea></div><button type="submit">Send
+                    Message</button>
+                <p id="success-message">Thanks — your message is ready to send.</p>
+            </form>
+        </section>
+    </main>
+    <script>document.querySelector('#contactForm').addEventListener('submit', function (e) { e.preventDefault(); document.querySelector('#success-message').style.display = 'block'; this.reset() })</script>
+</body>
+
+</html>
